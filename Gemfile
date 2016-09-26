@@ -9,8 +9,6 @@ gem 'dotenv-rails', :require => 'dotenv/rails-now', :groups => [:development, :t
 
 gem 'soundcloud'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
@@ -54,6 +52,8 @@ group :test do
 end
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec'
