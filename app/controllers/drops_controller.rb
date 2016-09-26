@@ -35,7 +35,7 @@ class DropsController < ApplicationController
 
   def show
     if @drop.present?
-      @place = @drop.place
+      @place = @drop.place || Place.new
     end
   end
 
@@ -70,7 +70,7 @@ class DropsController < ApplicationController
 
     def set_drop
       page_not_found unless @drop = Drop.find_by(id: params[:id].to_i)
-    end 
+    end
 
     def drop_params
       params.require(:drop).permit(:sc_track, :title, :latitude, :longitude, all_tags:[])
