@@ -25,6 +25,6 @@ class ConnectController < ApplicationController
   private
 
   def environment_url
-    Rails.env.production? ? "http://sounddrop.audio/verify" : "http://localhost:3000/verify"
+    Rails.env.production? ? "https://sounddrop-absolventa.herokuapp.com/verify" : "http://localhost:3000/verify"
   end
 end
