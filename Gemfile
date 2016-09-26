@@ -44,7 +44,7 @@ gem 'rack-cors', :require => 'rack/cors'
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  gem 'mysql'
+  gem 'pg'
 end
 
 group :test do

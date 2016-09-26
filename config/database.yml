@@ -23,8 +23,5 @@ test:
 
 
 production:
-  adapter:  mysql
-  database: rails
-  username: root
-  password: <%= ENV['DB_PASSWORD'] %>
-  socket: /var/run/mysqld/mysqld.sock
+  <<: *default
+  adapter:  pg
