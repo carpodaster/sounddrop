@@ -3,6 +3,7 @@ require 'soundcloud'
 class DropsController < ApplicationController
   include ApplicationHelper
 
+  before_action :use_your_api_luke
   before_action :set_drop, only: [:show, :edit, :update, :destroy]
   before_action :require_creator_of_drop, except: [:index, :show, :new, :create]
 
