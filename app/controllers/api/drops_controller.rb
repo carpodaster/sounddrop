@@ -11,7 +11,7 @@ class Api::DropsController < ApplicationController
       places_within_radius = Place.near([params[:latitude], params[:longitude]], DEFAULT_RADIUS, units:  :km)
       @drops = Drop.where(place_id: places_within_radius.map(&:id))
     else
-      @drops = Drop.all
+      @drops = Drop.none
     end
   end
 
