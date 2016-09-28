@@ -5,17 +5,19 @@ class Api::DropsController < ApplicationController
   respond_to :json
 
   before_action :notify_for_fixed_radius
+  before_action :require_lat_lng
 
   def index
-    if params[:latitude] && params[:longitude]
-      places_within_radius = Place.near([params[:latitude], params[:longitude]], DEFAULT_RADIUS, units:  :km)
-      @drops = Drop.where(place_id: places_within_radius.map(&:id))
-    else
-      @drops = Drop.none
-    end
+    @drops = Drop.near([params[:latitude], params[:longitude]], DEFAULT_RADIUS, units: :km)
   end
 
   private
+
+  def require_lat_lng
+    unless params[:latitude] && params[:longitude]
+      render json: { errors: ["Both latitude and longitude provided you have not."] }
+    end
+  end
 
   def notify_for_fixed_radius
     if params[:radius]
