@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @drops = Drop.all
+    @drops = Drop.none
   end
 
   def about
