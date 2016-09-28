@@ -5,9 +5,10 @@ class Drop < ActiveRecord::Base
 
   has_many :taggings
   has_many :tags, through: :taggings
-
   validates :sc_track, presence: true,  numericality: { only_integer: true }
   validates :latitude, :longitude, presence: true
+
+  geocoded_by :title
 
   before_validation :copy_lat_and_long_from_place
 
