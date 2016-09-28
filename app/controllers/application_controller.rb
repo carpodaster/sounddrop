@@ -9,9 +9,4 @@ class ApplicationController < ActionController::Base
       format.all  { render nothing: true, status: 404 }
     end
   end
-
-  def use_your_api_luke
-    render json: { errors: "Use your API, Luke!", where_to_go_now: api_drops_url }
-  end
-
 end
