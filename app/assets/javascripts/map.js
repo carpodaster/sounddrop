@@ -8,8 +8,8 @@ var Map = {
       dropLat = parseFloat(dropContainerNode.dataset.dropLat);
       dropLong = parseFloat(dropContainerNode.dataset.dropLong);
     } else {
-       dropLat = 52.536;
-       dropLong = 13.392;
+       dropLat = 52.5120181;
+       dropLong = 13.3900989;
     }
 
     var icon = {
@@ -18,7 +18,7 @@ var Map = {
     };
 
     Map.map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
+      zoom: 18,
       center: { lat: dropLat, lng: dropLong }
     });
 
