@@ -7,7 +7,7 @@ class DropsController < ApplicationController
   before_action :require_creator_of_drop, except: [:index, :show, :new, :create]
 
   def index
-    @drops = Drop.all
+    @drops = Drop.none
   end
 
   def new
